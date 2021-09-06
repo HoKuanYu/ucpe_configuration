@@ -1,0 +1,11 @@
+[mysqld]
+skip-host-cache
+skip-name-resolve
+sync_binlog=1
+server-id=1
+log-bin=master-log
+relay-log=slave-log
+log-slave-updates=1
+auto_increment_offset=1
+auto_increment_increment=2
+

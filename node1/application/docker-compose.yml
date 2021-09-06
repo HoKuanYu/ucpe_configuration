@@ -1,0 +1,68 @@
+version: '2'
+
+volumes:
+    uploads:
+        driver: local
+  
+services:
+    shinobi:
+        build:
+            context: Shinobi/
+            dockerfile: Dockerfile
+        container_name: shinobi
+        restart: always
+        links:
+            - mysql
+        ports:
+            - "8080:8080"
+        volumes:
+            - /dev/shm/Shinobi/streams:/dev/shm/streams
+            - /mnt/datavol/Shinobi/config:/config
+            - /mnt/datavol/Shinobi/customAutoLoad:/home/Shinobi/libs/customAutoLoad
+            - /mnt/datavol/Shinobi/videos:/home/Shinobi/videos
+            - /mnt/datavol/Shinobi/plugins:/home/Shinobi/plugins
+            - /etc/localtime:/etc/localtime
+            
+    ospos:
+        build:
+            context: ospos/
+            dockerfile: Dockerfile
+        container_name: ospos
+        restart: always
+        links:
+            - mysql
+        ports:
+            - "80:80"
+        volumes:
+            - uploads:/app/public/uploads
+        environment:
+            - PHP_TIMEZONE=UTC
+            - MYSQL_USERNAME=admin
+            - MYSQL_PASSWORD=ucpe
+            - MYSQL_DB_NAME=ospos
+            - MYSQL_HOST_NAME=mysql
+
+    mysql:
+        image: mariadb:10.0.26
+        container_name: mysql
+        restart: always
+        environment:
+            - MYSQL_ROOT_PASSWORD=ucpe
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./sqls/database.sql:/docker-entrypoint-initdb.d/database.sql
+            - ./sqls/framwork.sql:/docker-entrypoint-initdb.d/framwork.sql
+            - ./sqls/user.sql:/docker-entrypoint-initdb.d/user.sql
+            - ./docker.cnf:/etc/mysql/conf.d/docker.cnf
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:4.9
+        container_name: phpmyadmin
+        restart: always
+        ports:
+            - 8000:80
+        links:
+            - mysql
+        environment:
+            - PMA_HOST=mysql
