@@ -8,7 +8,6 @@ case $TYPE in
  ;;
 "backup") docker stop shinobi
           docker stop ospos
-          docker restart mysql
           exit 0
  ;;
 esac
