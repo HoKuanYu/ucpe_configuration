@@ -1,0 +1,45 @@
+Welcome to BeeRocks CLI 1.7.0 Build date 2021-07-29_11-37-32
+Enter 'help' for help, 'exit' to exit
+bml_connect: return value is: BML_RET_OK, Success status
+Connected to BeeRocks BML CLI.
+onboard_status = 0
+Connected to BeeRocks Master CLI.
+>>bml_conn_map
+bml_nw_map_query: return value is: BML_RET_OK, Success status
+>>exit...
+
+GW_BRIDGE: name: GW_MASTER, mac: 4a:1c:a4:2f:56:45, ipv4: 172.18.0.2
+    ETHERNET: mac: 4a:1c:a4:2f:56:46
+        IRE_BACKHAUL: mac: 94:83:c4:0d:f2:24, ch: 0, bw: 160H
+            IRE_BRIDGE: name: IRE_f2:24, mac: b2:83:c4:0d:f2:24, ipv4: 192.168.1.3
+                ETHERNET: mac: b2:83:c4:0d:f2:25
+                RADIO: wlan1 mac: 94:83:c4:0d:f2:15, ch: 36, bw: 80L, freq: 5180MHz
+                    fVAP[0]: wlan1.0 bssid: 94:83:c4:0d:f2:15, ssid: prplmesh-5g
+                    fVAP[1]: wlan1.1 bssid: 94:83:c4:0d:f2:45, ssid: prplWrt2
+                RADIO: wlan0 mac: 94:83:c4:0d:f2:25, ch: 11, bw: 20, freq: 2462MHz
+                    fVAP[0]: wlan0.0 bssid: 94:83:c4:0d:f2:25, ssid: prplmesh
+        IRE_BACKHAUL: mac: 94:83:c4:0d:ef:de, ch: 0, bw: 160H
+            IRE_BRIDGE: name: IRE_ef:de, mac: b2:83:c4:0d:ef:de, ipv4: 192.168.1.2
+                ETHERNET: mac: b2:83:c4:0d:ef:df
+                RADIO: wlan1-1 mac: 94:83:c4:0d:ef:15, ch: 36, bw: 80L, freq: 5180MHz
+                    fVAP[0]: wlan1-1.0 bssid: 94:83:c4:0d:ef:15, ssid: prplmesh-5g
+                RADIO: wlan0 mac: 94:83:c4:0d:ef:20, ch: 11, bw: 20, freq: 2462MHz
+                    fVAP[0]: wlan0.0 bssid: 94:83:c4:0d:ef:20, ssid: prplmesh
+        IRE_BACKHAUL: mac: 94:83:c4:0d:f0:28, ch: 0, bw: 160H
+            IRE_BRIDGE: name: IRE_f0:28, mac: b2:83:c4:0d:f0:28, ipv4: 192.168.1.1
+                ETHERNET: mac: b2:83:c4:0d:f0:29
+                RADIO: wlan1 mac: 94:83:c4:0d:f0:15, ch: 36, bw: 80L, freq: 5180MHz
+                    fVAP[0]: wlan1.0 bssid: 94:83:c4:0d:f0:15, ssid: prplmesh-5g
+                    fVAP[1]: wlan1.1 bssid: 94:83:c4:0d:f0:20, ssid: prplWrt2
+                RADIO: wlan0 mac: 94:83:c4:0d:f0:25, ch: 11, bw: 20, freq: 2462MHz
+                    fVAP[0]: wlan0.0 bssid: 94:83:c4:0d:f0:25, ssid: prplmesh
+        IRE_BACKHAUL: mac: 94:83:c4:0d:f1:c2, ch: 0, bw: 160H
+            IRE_BRIDGE: name: IRE_f1:c2, mac: b2:83:c4:0d:f1:c2, ipv4: 192.168.1.4
+                ETHERNET: mac: b2:83:c4:0d:f1:c3
+                RADIO: wlan0 mac: 94:83:c4:0d:f1:25, ch: 11, bw: 20, freq: 2462MHz
+                    fVAP[0]: wlan0.0 bssid: 94:83:c4:0d:f1:25, ssid: prplmesh
+                RADIO: wlan1 mac: 94:83:c4:0d:f1:15, ch: 36, bw: 80L, freq: 5180MHz
+                    fVAP[0]: wlan1.0 bssid: 94:83:c4:0d:f1:15, ssid: prplmesh-5g
+    RADIO: wlan2 mac: aa:44:4d:db:f9:eb, ch: 149, bw: 80H, freq: 5745MHz
+    RADIO: wlan0 mac: a6:c0:1c:ca:c5:a2, ch: 1, bw: 40L, freq: 2412MHz
+bml_disconnect: return value is: BML_RET_OK, Success status

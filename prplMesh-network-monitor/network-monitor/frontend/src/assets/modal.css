@@ -1,0 +1,46 @@
+.func-modal-body {
+    background-color: var(--func-bg);
+    border: none;
+}
+
+.func-modal-content{
+    background-color: var(--func-bg);
+    border: none;
+}
+
+.func-modal-footer{
+    background-color: var(--func-bg);
+    border: none;
+}
+
+.func-modal-header{
+    background-color: var(--func-bg);
+    border: none;
+    color: white;
+}
+
+.func-modal-header button{
+    color: white;
+}
+
+.func-modal-header button:hover{
+    color: white;
+}
+
+.func-modal-title {
+    font-size: 1rem;
+    
+}
+
+.func-modal-input {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.func-modal-input:focus {
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+}

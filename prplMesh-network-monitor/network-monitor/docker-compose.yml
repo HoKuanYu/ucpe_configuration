@@ -1,0 +1,20 @@
+version: "3"
+services:
+  api:
+    build: ./api
+    ports: ['5000:5000']
+    privileged: true
+    volumes: 
+        - './api:/app'
+        - "/var/run/docker.sock:/var/run/docker.sock"
+
+  web:
+    build: ./frontend
+    ports: ['8888:8888']
+    volumes: 
+        - ./frontend:/app
+        - /app/node_modules
+    environment:
+        - VUE_APP_SERVER_URL=http://192.168.1.11:5000
+        - NODE_ENV=development
+
